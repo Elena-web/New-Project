@@ -31,6 +31,6 @@
         }
       }
     const result = wordsArr.join(' ');
-    console.log(result.length);
+    return result.length;
 }
 export default posSize;
