@@ -1,4 +1,23 @@
 {
+  "name": "new-project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "code.js",
+  "scripts": {
+    "test": "npx mocha tests",
+    "lint": "npx eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elena-web/New-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elena-web/New-Project/issues"
+  },
+  "homepage": "https://github.com/Elena-web/New-Project#readme",
   "dependencies": {
     "chai": "^4.3.7",
     "eslint": "^8.34.0",
