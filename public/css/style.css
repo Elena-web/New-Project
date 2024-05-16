@@ -1,0 +1,116 @@
+/* Base style */
+*,
+*::before,
+*::after {
+  outline: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+html {
+  height: 100%;  
+  font-size: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+/* Wrapper */
+.wrapper {
+    min-width: 36rem;
+    margin: 0 auto;
+}
+
+/* Container */
+.container {
+  margin: 0 auto;
+  padding: 0 1.6rem;
+}
+
+/* Header */
+
+.header {
+    padding-top: 2.4rem;
+}
+
+.header__logo {
+    margin: 0 auto;
+    width: 3.6rem;
+    height: 3.8rem;
+}
+
+h1 {
+    width: 95%;
+    font-size: 3.2rem;
+    color: #000;
+    margin: 2.2rem auto 2rem;
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+.header__btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2.4rem;
+}
+
+.btn {
+    width: 100%;
+    height: 5.2rem;
+    display: inline-block;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+}
+
+.btn.registr {
+    margin-bottom: 1.6rem;
+    background-color: #0057FF;
+    color: #fff;
+}
+
+.btn.login {
+    background-color: #fff;
+    border:  1px solid #0057FF;
+    font-weight: normal;
+}
+
+.header__background {
+    height: 16rem;
+    width: 100%;
+}
