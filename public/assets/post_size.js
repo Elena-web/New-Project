@@ -42,8 +42,6 @@ export default function postSize(str) {
           wordsArr[i] = slicedWord;
         }
       }
-    }
-  }
-  const result = wordsArr.join(' ');
-  return result.length;
+    const result = wordsArr.join(' ');
+    return result.length;
 }
