@@ -3,27 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Twiitter</title>
 </head>
 <body>
     <div class="wrapper">
+        <!--BEGIN HEADER-->
         <header class="header">
             <div class="container">
                 <div class="header__logo">
                     <img src="../public/image/icons/logo.svg" alt="logo">
                 </div>
-                <h1>Оставайся на связи с друзьями, даже когда их нет рядом</h1>
+                <h1 class="title">Оставайся на связи с друзьями, даже когда их нет рядом</h1>
                 <div class="header__btn">
                     <button class="btn registr">Зарегистрироваться</button>
                     <button class="btn login">Войти</button>
                 </div>
             </div>
             <div class="header__background">
-                <img src="../public/image/background/cover.jpg" alt="">
+                <img src="../public/image/background/cover.jpg" alt="photo">
             </div>
         </header>
+        <!--END HEADER-->
+        <!--BEGIN INFO-->
+        <section class="info">
+            <div class="container">
+                <div class="info__wrap">
+                    <div class="info__block">
+                        <div class="info__num">20</div>
+                        <div class="info__txt">Пользователей зарегистрировано</div>
+                    </div>
+                    <div class="info__block">
+                        <div class="info__num">556</div>
+                        <div class="info__txt">Сообщений написано</div>
+                    </div>
+                    <div class="info__block">
+                        <div class="info__num">58</div>
+                        <div class="info__txt">Написано сегодня</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--END INFO-->
+        <!--BEGIN POSTS-->
+        <section class="posts">
+            <div class="container">
+                <div class="posts__title">
+                    <h4>Последние сообщения</h4>
+                </div>
+                </div>
+                <div class="post">
+                    <div class="container">
+                    <div class="post_wrap">
+                        <div class="avatar">
+                            <img src="../public/image/user/user-1.jpg" alt="photo">
+                        </div>
+                        <div class="post__block">
+                            <div class="post__top">
+                                <div class="post__name">
+                                    <p class="name">Винсет Вега</p>
+                                    <p class="user-name">@roizmangbn</p>
+                                </div>
+                                <div class="post__time">28 минут назад</div>
+                            </div>
+                            <div class="post__txt">
+                                <p>У них там все немного не так. В смысле, у них там все точно так же, как и здесь, только немного по-другому.</p>                           
+                            </div>
+                            <div class="post__icons">
+                                <div class="replies">
+                                    <span class="replies__icon"></span>
+                                    <p class="replies__num">21</p>
+                                </div>
+                                <div class="likes">
+                                    <span class="likes__icon"></span>
+                                    <p class="likes__num">23</p>
+                                </div>
+                                <div class="save">
+                                    <span class="save__icon"></span>
+                                    <p class="save__num">9</p>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="container">
+                    <div class="post_wrap">
+                        <div class="avatar">
+                            <img src="../public/image/user/user-2.jpg" alt="photo">
+                        </div>
+                        <div class="post__block">
+                            <div class="post__top">
+                                <div class="post__name">
+                                    <p class="name">Elon Musk</p>
+                                    <p class="user-name">@elonmusk</p>
+                                </div>
+                                <div class="post__time">12 часов назад</div>
+                            </div>
+                            <div class="post__txt">
+                                <p>Has anyone seen web3? I can’t find it.</p>
+                            </div>
+                            <div class="post__icons">
+                                <div class="replies">
+                                    <span class="replies__icon"></span>
+                                    <p class="replies__num">21</p>
+                                </div>
+                                <div class="likes">
+                                    <span class="likes__icon"></span>
+                                    <p class="likes__num">23</p>
+                                </div>
+                                <div class="save">
+                                    <span class="save__icon"></span>
+                                    <p class="save__num">9</p>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="container">
+                    <div class="post_wrap">
+                        <div class="avatar">
+                            <img src="../public/image/user/user-3.jpg" alt="photo">
+                        </div>
+                        <div class="post__block">
+                            <div class="post__top">
+                                <div class="post__name">
+                                    <p class="name">Александр</p>
+                                    <p class="user-name">@sportsru</p>
+                                </div>
+                                <div class="post__time">2 часа назад</div>
+                            </div>
+                            <div class="post__txt">
+                                <p>Прикладываю фотки с последнего матча. С каждым днем играю все лучше. Еще пару лет и можно на Олимпиаду ехать!</p>
+                            </div>
+                            <div class="post__img">
+                                <img src="../public/image/post/image-6.jpg" alt="photo">
+                            </div>
+                            <div class="post__icons">
+                                <div class="replies">
+                                    <span class="replies__icon"></span>
+                                    <p class="replies__num">21</p>
+                                </div>
+                                <div class="likes">
+                                    <span class="likes__icon"></span>
+                                    <p class="likes__num">23</p>
+                                </div>
+                                <div class="save">
+                                    <span class="save__icon"></span>
+                                    <p class="save__num">9</p>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="container">
+                    <div class="post_wrap">
+                        <div class="avatar">
+                            <img src="../public/image/user/user-4.jpg" alt="photo">
+                        </div>
+                        <div class="post__block">
+                            <div class="post__top">
+                                <div class="post__name">
+                                    <p class="name">Мия Уоллес</p>
+                                    <p class="user-name">@mia</p>
+                                </div>
+                                <div class="post__time">1 день назад</div>
+                            </div>
+                            <div class="post__txt">
+                                <p>Идут по улице три помидора: папа-помидор, мама-помидор и ребенок-помидор. Ребенок-помидор начинает отставать. Папа-помидор разозлился, подбегает к ребенку-помидору, раздавливает всмятку... и говорит: «Догоняй, кетчуп!»</p>
+                            </div>
+                            <div class="post__icons">
+                                <div class="replies">
+                                    <span class="replies__icon"></span>
+                                    <p class="replies__num">21</p>
+                                </div>
+                                <div class="likes">
+                                    <span class="likes__icon"></span>
+                                    <p class="likes__num">23</p>
+                                </div>
+                                <div class="save">
+                                    <span class="save__icon"></span>
+                                    <p class="save__num">9</p>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+        </section>
+        <!--END POSTS-->
+        <!--BEGIN FOOTER-->
+        <footer class="footer">
+            <div class="container">
+                    <h2 class="title">Зарегистрируйтесь и узнайте обо всём первым</h2>
+                <div class="footer__btn">
+                    <button class="btn registr">Зарегистрироваться</button>
+                    <button class="btn login">Войти</button>
+                </div>
+            </div>
+        </footer>
+        <!--END FOOTER-->
     </div>
     <script src="assets/post_size.js"></script>
     <script src="assets/index.js"></script>
