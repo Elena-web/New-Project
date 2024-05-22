@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "code.js",
+  "main": "index.js",
   "scripts": {
     "test": "npx mocha tests",
     "lint": "npx eslint ."
@@ -19,10 +19,14 @@
   },
   "homepage": "https://github.com/Elena-web/New-Project#readme",
   "dependencies": {
-    "chai": "^4.3.7",
-    "eslint": "^8.34.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-mocha": "^10.1.0",
-    "mocha": "^10.2.0"
+    "eslint-plugin-mocha": "^10.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "mocha": "^8.4.0"
   }
 }

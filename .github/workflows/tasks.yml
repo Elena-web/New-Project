@@ -1,6 +1,6 @@
-name: Lint Code Base
+name: Lint and Test Code
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
         run: npm install
 
       - name: lint
-        run: npx eslint .
+        run: npm test
 
       - name: test
-        run: npx mocha tests
+        run: npm run lint

@@ -1,5 +1,6 @@
 {
-  "extends": "airbnb-base",
+  "extends": ["airbnb-base", "plugin:mocha/recommended"],
+  "plugins": ["mocha"],
   "env": {
     "node": true,
     "es6": true
