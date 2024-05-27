@@ -1,4 +1,4 @@
-const convertTime = (postDate, currentDate) => {
+export default function convertTime(postDate, currentDate) {
   const date1 = new Date(currentDate);
   const date2 = new Date(postDate);
   let result = 0;
@@ -110,5 +110,4 @@ const convertTime = (postDate, currentDate) => {
     }
   }
   return 'Только что';
-};
-convertTime();
+}
