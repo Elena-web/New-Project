@@ -18,7 +18,6 @@ export default function validateEmail(str) {
         }
       }
     }
-    return false;
   }
   return false;
 }
