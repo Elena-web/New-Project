@@ -4,7 +4,6 @@ const loginButton = document.getElementById('loginButton');
 const registerModal = document.querySelector('.registration-modal');
 const loginModal = document.querySelector('.login-modal');
 const overlay = document.querySelector('.overlay');
-
 registerButton.addEventListener('click', () => {
   registerModal.classList.remove('hidden');
   overlay.classList.remove('hidden');

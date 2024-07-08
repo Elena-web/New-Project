@@ -27,34 +27,34 @@
                 <!-- ОКНО РЕГИСТРАЦИИ-->
                 <div class="modal registration-modal hidden" id="modal">
                     <h2 class="modal-title">Регистрация</h2>
-                    <form class="registration-form">
+                    <form class="registration-form" id= "registration-form">
                         <div class="input-container">
-                            <input id="email" type="email" class="field" placeholder=" " required>
+                            <input id="email" type="text" class="field" placeholder=" " data-email="true" data-required="true">
                             <label for="email" id="email-label" class="placeholder">Электронная почта</label>
                         </div>
                         <div class="input-container">
-                            <input id="password" type="password" class="field"  placeholder=" " minlength="8" required>
+                            <input id="password" type="password" name="password" class="field"  placeholder=" " data-min-length="8" data-max-length="15" data-required="true">
                             <label for="password" id="password-label" class="placeholder">Пароль</label>
                         </div>
                         <div class="input-container">
-                            <input id="password-confirm" type="password" class="field" placeholder=" " minlength="8" required>
+                            <input id="password-confirm" type="password" name="confirm-password" class="field" placeholder=" " data-min-length="8" data-max-length="15" data-required="true" data-confirm="true">
                             <label for="password-confirm" id="passwordconfirm-label" class="placeholder">Подтвердите пароль</label>
                         </div>
-                      <button class="btn registr" id="registr" type="submit">Зарегистрироваться</button>
+                      <button class="btn registr" type="submit">Зарегистрироваться</button>
                     </form>
-                  </div>
+                </div>
 
                   <!-- ОКНО АВТОРИЗАЦИИ-->
                   <div class="modal login-modal hidden">
                     <h2 class="modal-title">Авторизация</h2>
-                    <form class="registration-form">
+                    <form class="registration-form" id= "authorization-form">
                         <div class="input-container">
-                            <input id="email" type="email" class="field" placeholder=" " required>
-                            <label for="email" id="email-label" class="placeholder">Адрес электронной почты</label>
+                            <input id="email1" type="email" class="field" placeholder=" " required>
+                            <label for="email1" id="email-label" class="placeholder">Адрес электронной почты</label>
                         </div>
                         <div class="input-container">
-                            <input id="password" type="password" class="field"  placeholder=" " minlength="8" required>
-                            <label for="password" id="password-label" class="placeholder">Пароль</label>
+                            <input id="password1" type="password" class="field"  placeholder=" " minlength="8" required>
+                            <label for="password1" id="password-label" class="placeholder">Пароль</label>
                         </div>
                       <button class="btn login" type="submit">Войти</button>
                     </form>
@@ -249,11 +249,12 @@
         </footer>
         <!--END FOOTER-->
     </div>
+    <script type="module" src="assets/validate_form.js"></script>
     <script type="module" src="assets/validate_email.js"></script>
     <script src="assets/convert_links.js"></script>
     <script src="assets/highlight_hashtags.js"></script>
     <script src="assets/convert_time.js"></script>
     <script src="assets/post_size.js"></script>
-    <script src="assets/index.js"></script>
+    <script type="module" src="assets/index.js"></script>
 </body>
 </html>
