@@ -1,3 +1,26 @@
+/* Отображение loader */
+const loaderContainer = document.querySelectorAll('.loader-container');
+const postWrap = document.querySelectorAll('.post_wrap');
+function showLoader(show) {
+  loaderContainer.forEach((elem) => {
+    let element = elem;
+    element.style.display = show ? 'flex' : 'none';
+    element = null;
+  });
+
+  postWrap.forEach((elem) => {
+    let element = elem;
+    element.style.display = show ? 'none' : 'flex';
+    element = null;
+  });
+}
+
+showLoader(true);
+// Количество ожидаемых данных
+const totalDataToLoad = 2;
+// Количество загруженных данных
+let dataLoaded = 0;
+
 // Отбражение статистики
 const usersRegistr = document.querySelector('.info__block.regitr');
 const writMessages = document.querySelector('.info__block.message');
@@ -43,6 +66,8 @@ fetch(urlPictures)
           <img src="${picture.url}" alt="photo">
         `;
     });
+    // Увеличение счетчика загруженных данных
+    dataLoaded += 1;
   });
 
 // Отбражение постов
@@ -86,4 +111,10 @@ fetch(urlMessages)
       </div>
       </div>`;
     });
+    // Увеличение счетчика загруженных данных
+    dataLoaded += 1;
+    // Если все данные загружены, скрыть загрузочный индикатор
+    if (dataLoaded === totalDataToLoad) {
+      showLoader(false);
+    }
   });
