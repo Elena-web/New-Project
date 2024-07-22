@@ -1,3 +1,4 @@
+import convertTime from './convert_time.js';
 /* Отображение loader */
 const loaderContainer = document.querySelectorAll('.loader-container');
 const postWrap = document.querySelectorAll('.post_wrap');
@@ -73,48 +74,73 @@ fetch(urlPictures)
 // Отбражение постов
 const urlMessages = 'https://burtovoy.github.io/messages.json';
 const postContainers = document.querySelectorAll('.post__block');
+function fetchAndRenderMessages() {
+  fetch(urlMessages)
+    .then((response) => response.json())
+    .then((messagesOfUsers) => {
+      const messagesData = messagesOfUsers.messages;
+      messagesData.forEach((message, index) => {
+        const postContainer = postContainers[index];
+        // Преобразование даты, разделяем дату и время
+        const parts = message.date.split(' ');
+        const datePart = parts[0];
+        const timePart = parts[1];
+        // Разделяем день, месяц и год
+        const dateParts = datePart.split('.');
+        const day = dateParts[0];
+        const month = dateParts[1];
+        const year = dateParts[2];
 
-fetch(urlMessages)
-  .then((response) => response.json())
-  .then((messagesOfUsers) => {
-    const messagesData = messagesOfUsers.messages;
-    messagesData.forEach((message, index) => {
-      const postContainer = postContainers[index];
-      postContainer.innerHTML = `
-      <div class="post__top">
-        <div class="post__name">
-          <p class="name">${message.name}</p>
-          <p  class="user-name">${message.mail}</p>
+        // Разделяем часы и минуты
+        const timeParts = timePart.split(':');
+        const hours = timeParts[0];
+        const minutes = timeParts[1];
+
+        // Создаем новый объект Date с указанными значениями
+        const date = new Date(year, month - 1, day, hours, minutes);
+
+        // Получаем отформатированную строку в формате "YYYY-MM-DDTHH:MM:SSZ"
+        const formattedTime = convertTime(date, new Date());
+        postContainer.innerHTML = `
+        <div class="post__top">
+          <div class="post__name">
+            <p class="name">${message.name}</p>
+            <p  class="user-name">${message.mail}</p>
+          </div>
+          <div class="post__time">${formattedTime}</div>
         </div>
-        <div class="post__time">${message.date}</div>
-      </div>
-      <div class="post__txt">
-        <p>${message.message}</p>
-      </div>
-      ${message.img_message ? `
-        <div class="post__img">
-          <img src="${message.img_message}" alt="photo">
+        <div class="post__txt">
+          <p>${message.message}</p>
         </div>
-      ` : ''}
-      <div class="post__icons">
-      <div class="replies">
-        <span class="replies__icon"></span>
-        <p class="replies__num">${message.quantityReposts}</p>
-      </div>
-      <div class="likes">
-        <span class="likes__icon"></span>
-        <p class="likes__num">${message.quantityLike}</p>
-      </div>
-      <div class="save">
-        <span class="save__icon"></span>
-        <p class="save__num">${message.quantityShare}</p>
-      </div>
-      </div>`;
+        ${message.img_message ? `
+          <div class="post__img">
+            <img src="${message.img_message}" alt="photo">
+          </div>
+        ` : ''}
+        <div class="post__icons">
+        <div class="replies">
+          <span class="replies__icon"></span>
+          <p class="replies__num">${message.quantityReposts}</p>
+        </div>
+        <div class="likes">
+          <span class="likes__icon"></span>
+          <p class="likes__num">${message.quantityLike}</p>
+        </div>
+        <div class="save">
+          <span class="save__icon"></span>
+          <p class="save__num">${message.quantityShare}</p>
+        </div>
+        </div>`;
+      });
+
+      // Увеличение счетчика загруженных данных
+      dataLoaded += 1;
+
+      // Если все данные загружены, скрыть загрузочный индикатор
+      if (dataLoaded === totalDataToLoad) {
+        showLoader(false);
+      }
     });
-    // Увеличение счетчика загруженных данных
-    dataLoaded += 1;
-    // Если все данные загружены, скрыть загрузочный индикатор
-    if (dataLoaded === totalDataToLoad) {
-      showLoader(false);
-    }
-  });
+}
+fetchAndRenderMessages();
+setInterval(fetchAndRenderMessages, 60000);
