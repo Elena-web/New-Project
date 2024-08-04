@@ -124,3 +124,4 @@ export default function convertTime(postDate, currentDate) {
   }
   return 'Только что';
 }
+
