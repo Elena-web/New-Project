@@ -1,8 +1,6 @@
 #root {
     max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
+    
 }
 .card {
 padding: 2em;
@@ -10,3 +8,457 @@ padding: 2em;
 .read-the-docs {
 color: #888;
 }
+
+/* Base style */
+*,
+*::before,
+*::after {
+  outline: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  transition: all .3s linear;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  transition: all .3s linear;
+}
+
+ul {
+  margin: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+/* Wrapper */
+.wrapper {
+    min-width: 36rem;
+    margin: 0 auto;
+}
+
+/* Container */
+.container {
+  margin: 0 auto;
+  padding: 0 1.6rem;
+}
+
+/* Header */
+
+header {
+    padding-top: 2.4rem;
+}
+
+.header__logo {
+    margin: 0 auto;
+    width: 3.6rem;
+    height: 3.8rem;
+}
+
+.title {
+    width: 95%;
+    font-size: 3.2rem;
+    color: #000;
+    margin: 2.2rem auto 2rem;
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+.header__btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2.4rem;
+}
+
+.btn {
+    width: 100%;
+    height: 5.2rem;
+    display: inline-block;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+}
+
+.btn.registr {
+  margin-bottom: 1.6rem;
+}
+
+.btn.registr,
+.btn.login:hover {
+    background-color: #0057FF;
+    color: #fff;
+}
+
+
+.btn.login,
+.btn.registr:hover {
+    background-color: #fff;
+    border:  1px solid #0057FF;
+    font-weight: normal;
+    color: #000;
+}
+
+.header__background {
+    width: 100%;
+}
+
+/* section info*/
+.info {
+  background-color: #0057FF;
+  color: #fff;
+  padding: 3.6rem 0 .1rem;
+}
+
+.info__block {  
+  width: 80%;
+  margin: 0 auto 32px;
+}
+.info__num {
+  font-size: 4.8rem;
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+.info__txt {
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-style: normal;
+  width: 57%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* section posts */
+.posts {
+  padding: 4.1rem 0 0;
+}
+
+.posts__title {
+  color: #000;
+  font-size: 2.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.post {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #E9E9E9;
+}
+
+.post:last-child {
+  border-bottom: none;
+}
+.post_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 16%;
+}
+
+.avatar img {
+  border-radius: 50%;
+}
+
+.post__block {
+  width: 80%;
+}
+
+.post__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.user-name {
+  color: #ABACB1;
+  font-weight: 400;
+}
+
+.post__time {
+  color: #ABACB1;
+  font-size: 1rem;
+  font-weight: 400;
+  width: 20%;
+  text-align: right;
+}
+
+.post__txt {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 1.1rem 0 .9rem;
+  letter-spacing: .5px;
+}
+
+.post__img {
+  margin-bottom: .7rem;
+}
+
+.post__img img {
+  border-radius: 1rem;
+}
+.post__icons {
+  display: flex;
+  justify-content: flex-start;
+  color: #B1B1B1;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.replies,
+.likes,
+.save {
+  display: flex;
+  align-items: center;
+  width: 31%;
+}
+
+.replies__num,
+.save__num,
+.likes__num {
+  margin-left: .8rem;
+}
+.replies__icon {
+  width: 2rem;
+  height: 1.2rem;
+  display: block;
+  background-image: url(../image/post/share.svg);
+  background-repeat: no-repeat;
+}
+
+.likes__icon {
+  width: 2rem;
+  height: 1.3rem;
+  display: block;
+  background-image: url(../image/post/like.svg);
+  background-repeat: no-repeat;
+}
+
+.save__icon {
+  width: 2rem;
+  height: 1.4rem;
+  display: block;
+  background-image: url(../image/post/save.svg);
+  background-repeat: no-repeat;
+}
+
+/* FOOTER */
+.footer {
+  padding: 1.1rem 0 3.6rem;
+}
+.footer .title {
+  margin: 0 auto 2rem;
+}
+
+/* OVERLAY */
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #fefefe;
+  padding: 1.6rem;
+  border: 1px solid #888;
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-title {
+  position: relative;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.7;
+  color: #1D1E22;
+  margin: 3rem 0 1.5rem;
+}
+
+.modal-title::before {
+  content: "";
+  position: absolute;
+  top: -3.1rem;
+  left: 39%;
+  width: 5rem;
+  height: 0.4rem;
+  background-color: #ABACB1;
+  border-radius: 5px;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input-container {
+  position: relative;
+}
+
+.field {
+  width: 100%;
+  padding: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.17;
+  border: 1px solid #DFDFDF;
+  border-radius: 10px;
+  color: #555555;
+  margin-bottom: 2.6rem;
+  background-color: #fff;
+}
+
+.error .field {
+  border: 1px solid #FF97C3;
+  background-color: #FFDEEC;
+}
+
+.error-text {
+  display: block;
+  position: absolute;
+  top: 6rem;
+  left: 1.6rem;
+  color: #E40060;
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.17;
+}
+
+.registration-form .placeholder {
+  font-size: 1.8rem;
+  position: absolute;
+  top: 1.6rem;
+  left: 1.6rem;
+  pointer-events: none;
+  color: #B1B1B1;
+  margin-bottom: .3rem;  
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-form input:focus ~ label,
+.registration-form input:not(:placeholder-shown) ~ label {
+  display: block;
+  top: 4px;
+  font-size: 12px;
+  color: #B1B1B1;
+  transition: all .3s ease-in-out;
+}
+
+/* Loader*/
+.loader-container {
+  height: 10rem;
+  background-color: #fff;
+  border: 1px solid #ABACB1;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+.loader-txt {
+  color: #777879;
+  font-size: 14px;
+}
+
+.preloader {
+  width: 32px;
+  height: 30px;  
+}
+
+.bar {
+  width: 6px;
+  height: 15px;
+  background: #0057FF;
+  display: inline-block;
+  margin-right: 1px;
+  opacity: 0.1;
+  transform: scale(1);
+  animation: pulse .7s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+.bar:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.bar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: 0.35s;
+  margin-right: 0;
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+

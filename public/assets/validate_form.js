@@ -71,13 +71,4 @@ function validateForm(form) {
   return result;
 }
 
-document.getElementById('registration-form').addEventListener('submit', function (event) {
-  event.preventDefault();
-  if (validateForm(this) === true) {
-    const formRegistration = document.getElementById('registration-form');
-    formRegistration.querySelectorAll('input').forEach((item) => {
-      console.log(item.value);
-    });
-    alert('Регистрация прошла успешно!');
-  }
-});
+export default validateForm;

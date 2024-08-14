@@ -1,4 +1,4 @@
-export default function validateEmail(str) {
+function validateEmail(str) {
   // Проверка на наличие 1-го символа '@'
   let index = 0;
   for (let i = 0; i < str.length; i += 1) {
@@ -22,3 +22,4 @@ export default function validateEmail(str) {
   }
   return false;
 }
+export default validateEmail;
