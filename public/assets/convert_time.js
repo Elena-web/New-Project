@@ -1,4 +1,4 @@
-export default function convertTime(postDate, currentDate) {
+function convertTime(postDate, currentDate) {
   const date1 = new Date(currentDate);
   const date2 = new Date(postDate);
   let result = 0;
@@ -124,3 +124,4 @@ export default function convertTime(postDate, currentDate) {
   }
   return 'Только что';
 }
+export default convertTime;
