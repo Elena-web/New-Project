@@ -1,9 +1,10 @@
-export default function convertTime(postDate, currentDate) {
+function convertTime(postDate, currentDate) {
   const date1 = new Date(currentDate);
   const date2 = new Date(postDate);
   let result = 0;
   let lastDigit = 0;
   let timePost = '';
+
   if (date1.getUTCFullYear() === date2.getUTCFullYear()
         && date1.getUTCMonth() === date2.getUTCMonth()
         && date1.getUTCDate() === date2.getUTCDate()
@@ -25,10 +26,10 @@ export default function convertTime(postDate, currentDate) {
     }
   }
   if (date1.getUTCFullYear() === date2.getUTCFullYear()
-        && date1.getUTCMonth() === date2.getUTCMonth()
-        && date1.getUTCDate() === date2.getUTCDate()
-        && date1.getUTCHours() === date2.getUTCHours()
-        && date1.getUTCMinutes() !== date2.getUTCMinutes()) {
+    && date1.getUTCMonth() === date2.getUTCMonth()
+    && date1.getUTCDate() === date2.getUTCDate()
+    && date1.getUTCHours() === date2.getUTCHours()
+    && date1.getUTCMinutes() !== date2.getUTCMinutes()) {
     result = date1.getUTCMinutes() - date2.getUTCMinutes();
     if (result !== 0) {
       lastDigit = result % 10;
@@ -78,15 +79,26 @@ export default function convertTime(postDate, currentDate) {
       return timePost;
     }
   }
-  if (date1.getUTCFullYear() === date2.getUTCFullYear()
-        && date1.getUTCMonth() !== date2.getUTCMonth()) {
-    result = date1.getUTCMonth() - date2.getUTCMonth();
+
+  const diffInYears = date1.getUTCFullYear() - date2.getUTCFullYear();
+  const diffInMonths = (diffInYears * 12) + (date1.getUTCMonth() - date2.getUTCMonth());
+
+  if ((date1.getUTCFullYear() === date2.getUTCFullYear() && diffInMonths !== 0)
+  || (diffInYears === 0 && diffInMonths !== 0)
+  || (diffInYears === 1 && (diffInMonths > 0 && diffInMonths < 12))) {
+    if (diffInYears === 1 && (diffInMonths > 0 && diffInMonths < 12)) {
+      result = 12 - date2.getUTCMonth() + date1.getUTCMonth();
+    } else {
+      result = date1.getUTCMonth() - date2.getUTCMonth();
+    }
+    result = Math.abs(result); // Make the result positive
     if (result !== 0) {
       lastDigit = result % 10;
       if (lastDigit === 1 && result !== 11) {
         timePost = `${result} месяц назад`;
         return timePost;
-      } if (lastDigit >= 2 && lastDigit <= 4 && (result < 10 || result > 20)) {
+      }
+      if (lastDigit >= 2 && lastDigit <= 4 && (result < 10 || result > 20)) {
         timePost = `${result} месяца назад`;
         return timePost;
       }
@@ -94,6 +106,7 @@ export default function convertTime(postDate, currentDate) {
       return timePost;
     }
   }
+
   if (date1.getUTCFullYear() !== date2.getUTCFullYear()) {
     result = date1.getUTCFullYear() - date2.getUTCFullYear();
     if (result !== 0) {
@@ -111,3 +124,4 @@ export default function convertTime(postDate, currentDate) {
   }
   return 'Только что';
 }
+export default convertTime;

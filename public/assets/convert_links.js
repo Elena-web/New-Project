@@ -1,4 +1,4 @@
-export default function convertLinksToHTML(text) {
+function convertLinksToHTML(text) {
   const txtArr = text.split(' ');
   const protocolNames = ['http://', 'https://', 'www.'];
   const domainsNames = ['.com', '.org', '.net', '.ru', '.gov', '.edu', '.mil', '.cn', '.by', '.info', '.biz'];
@@ -28,3 +28,4 @@ export default function convertLinksToHTML(text) {
 
   return txtArr.join(' ');
 }
+export default convertLinksToHTML;

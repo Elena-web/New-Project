@@ -15,8 +15,9 @@
       "mocha/prefer-arrow-callback": 2,
       "linebreak-style": 0
     },
-    "extends": ["airbnb", "plugin:mocha/recommended"],
+    "extends": ["airbnb", "plugin:mocha/recommended", "plugin:react/jsx-runtime"],
     "plugins": [
-      "mocha"
+      "mocha",
+      "react"
     ]
 }
