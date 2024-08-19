@@ -24,10 +24,18 @@ function LoginModal({ isVisible, onClose }) {
       onClose();
     }
   };
+  const handleClose = () => {
+    onClose();
+  };
   return (
     <div className={`overlay ${isVisible ? '' : 'hidden'}`}>
       <div className={`modal login-modal ${isVisible ? 'modal--visible' : ''}`} onTouchMove={handleTouchMove}>
-        <h2 className="modal-title">Авторизация</h2>
+        <div className="modal__top">
+          <h2 className="modal-title">Авторизация</h2>
+          <button className="modal-close" type="button" onClick={handleClose}>
+            <img src="/public/image/icons/close.svg" alt="close" />
+          </button>
+        </div>
         <form className="registration-form" id="authorization-form" onSubmit={handleSubmit}>
           <div className="input-container">
             <input id="email1" type="email" className="field" placeholder="Адрес электронной почты" required />

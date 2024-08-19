@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import convertTime from '../public/assets/convert_time.js';
 import showLoader from '../public/assets/data_loader.js';
+import Sidebar from './Sidebar.jsx';
 
 function Posts() {
   const [messages, setMessages] = useState([]);
@@ -62,60 +63,63 @@ function Posts() {
         <div className="posts__title">
           <h4>Последние сообщения</h4>
         </div>
-        {isLoading ? (
-          <div className="loader-container">
-            <div className="preloader">
-              <i className="bar"> </i>
-              <i className="bar"> </i>
-              <i className="bar"> </i>
-            </div>
-            <p className="loader-txt">Loading messages...</p>
-          </div>
-        ) : (
-          messages.map((message) => (
-            <div className="post" key={message.id}>
-              <div className="container">
-                <div className="post_wrap">
-                  <div className="avatar">
-                    {pictures.find((picture) => picture.user_id === message.user_id) && (
-                      <img src={pictures.find((picture) => picture.user_id === message.user_id).url} alt="twiiter" />
-                    )}
-                  </div>
-                  <div className="post__block">
-                    <div className="post__top">
-                      <div className="post__name">
-                        <p className="name">{message.name}</p>
-                        <p className="user-name">{message.mail}</p>
-                      </div>
-                      <div className="post__time">{message.date}</div>
+        <div className="posts__content">
+          <div className="posts__wrapper">
+            {isLoading ? (
+              <div className="loader-container">
+                <div className="preloader">
+                  <i className="bar"> </i>
+                  <i className="bar"> </i>
+                  <i className="bar"> </i>
+                </div>
+                <p className="loader-txt">Loading messages...</p>
+              </div>
+            ) : (
+              messages.map((message) => (
+                <div className="post" key={message.id}>
+                  <div className="post_wrap">
+                    <div className="avatar">
+                      {pictures.find((picture) => picture.user_id === message.user_id) && (
+                        <img src={pictures.find((picture) => picture.user_id === message.user_id).url} alt="twiiter" />
+                      )}
                     </div>
-                    <div className="post__txt">
-                      <p>{message.message}</p>
-                    </div>
-                    {message.img_message && (
-                      <div className="post__img">
-                        <img src={message.img_message} alt="twiiter" />
+                    <div className="post__block">
+                      <div className="post__top">
+                        <div className="post__name">
+                          <p className="name">{message.name}</p>
+                          <p className="user-name">{message.mail}</p>
+                        </div>
+                        <div className="post__time">{message.date}</div>
                       </div>
-                    )}
-                    <div className="post__icons">
-                      <div className="replies">
-                        <span className="replies__icon"> </span>
-                        <p className="replies__num">{message.quantityReposts}</p>
+                      <div className="post__txt">
+                        <p>{message.message}</p>
                       </div>
-                      <div className="likes">
-                        <span className="likes__icon"> </span>
-                        <p className="likes__num">{message.quantityLike}</p>
-                      </div>
-                      <div className="save">
-                        <span className="save__icon"> </span>
-                        <p className="save__num">{message.quantityShare}</p>
+                      {message.img_message && (
+                        <div className="post__img">
+                          <img src={message.img_message} alt="twiiter" />
+                        </div>
+                      )}
+                      <div className="post__icons">
+                        <div className="replies">
+                          <span className="replies__icon"> </span>
+                          <p className="replies__num">{message.quantityReposts}</p>
+                        </div>
+                        <div className="likes">
+                          <span className="likes__icon"> </span>
+                          <p className="likes__num">{message.quantityLike}</p>
+                        </div>
+                        <div className="save">
+                          <span className="save__icon"> </span>
+                          <p className="save__num">{message.quantityShare}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          )))}
+              )))}
+          </div>
+          <Sidebar />
+        </div>
       </div>
     </section>
   );

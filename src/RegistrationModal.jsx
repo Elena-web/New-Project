@@ -32,13 +32,21 @@ function RegistrationModal({ isVisible, onClose }) {
       onClose();
     }
   };
+  const handleClose = () => {
+    onClose();
+  };
   return (
     <div className={`overlay ${isVisible ? '' : 'hidden'}`}>
       <div
         className={`modal registration-modal ${isVisible ? 'modal--visible' : ''}`}
         onTouchMove={handleTouchMove}
       >
-        <h2 className="modal-title">Регистрация</h2>
+        <div className="modal__top">
+          <h2 className="modal-title">Регистрация</h2>
+          <button className="modal-close" type="button" onClick={handleClose}>
+            <img src="/public/image/icons/close.svg" alt="close" />
+          </button>
+        </div>
         <form className="registration-form" id="registration-form" onSubmit={handleRegistrationSubmit}>
           <div className="input-container">
             <input id="email" type="text" className="field" placeholder="Электронная почта" data-email="true" data-required="true" />

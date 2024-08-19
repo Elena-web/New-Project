@@ -21,7 +21,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <h2 className="title">Зарегистрируйтесь и узнайте обо всём первым</h2>
+        <h2 className="footer__title">Зарегистрируйтесь и узнайте обо всём первым</h2>
         <div className="footer__btn">
           <button className="btn registr" type="button" onClick={handleRegistrationClick}>Зарегистрироваться</button>
           <button className="btn login" type="button" onClick={handleLoginClick}>Войти</button>
