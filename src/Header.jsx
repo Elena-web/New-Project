@@ -59,7 +59,8 @@ function Header() {
         </div>
       </div>
       <div className="header__background">
-        <img src="../image/background/cover.jpg" alt="twiiter" />
+        <img src="../image/background/header-dekstop.jpg" className="img dekstop" alt="twiiter" />
+        <img src="../image/background/cover.jpg" className="img mobile" alt="twiiter" />
       </div>
       <RegistrationModal
         isVisible={showRegistrationModal}
