@@ -54,4 +54,3 @@ LoginModal.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 export default LoginModal;
-

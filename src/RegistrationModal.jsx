@@ -37,8 +37,7 @@ function RegistrationModal({ isVisible, onClose }) {
   };
   return (
     <div className={`overlay ${isVisible ? '' : 'hidden'}`}>
-      <div
-        className={`modal registration-modal ${isVisible ? 'modal--visible' : ''}`}
+      <div className={`modal registration-modal ${isVisible ? 'modal--visible' : ''}`}
         onTouchMove={handleTouchMove}
       >
         <div className="modal__top">

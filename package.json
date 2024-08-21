@@ -27,6 +27,7 @@
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.9",
+    "express": "^4.19.2",
     "mocha": "^10.2.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
