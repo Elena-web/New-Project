@@ -1,4 +1,4 @@
-export default function postSize(str) {
+function postSize(str) {
   const wordsArr = str.split(' ');
   const protocolNames = {
     1: 'www.',
@@ -47,3 +47,4 @@ export default function postSize(str) {
   const result = wordsArr.join(' ');
   return result.length;
 }
+export default postSize;

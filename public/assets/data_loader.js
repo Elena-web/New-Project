@@ -1,21 +1,21 @@
 import convertTime from './convert_time.js';
 /* Отображение loader */
-const loaderContainer = document.querySelectorAll('.loader-container');
-const postWrap = document.querySelectorAll('.post_wrap');
 function showLoader(show) {
-  loaderContainer.forEach((elem) => {
-    let element = elem;
-    element.style.display = show ? 'flex' : 'none';
-    element = null;
-  });
+  const loaderContainers = document.querySelectorAll('.loader-container');
+  const postWraps = document.querySelectorAll('.post_wrap');
 
-  postWrap.forEach((elem) => {
-    let element = elem;
-    element.style.display = show ? 'none' : 'flex';
-    element = null;
-  });
+  if (loaderContainers.length > 0) {
+    loaderContainers.forEach((container) => {
+      container.classList.toggle('hidden', !show);
+    });
+  }
+
+  if (postWraps.length > 0) {
+    postWraps.forEach((wrap) => {
+      wrap.classList.toggle('hidden', show);
+    });
+  }
 }
-
 showLoader(true);
 // Количество ожидаемых данных
 const totalDataToLoad = 2;
@@ -142,5 +142,5 @@ function fetchAndRenderMessages() {
       }
     });
 }
-fetchAndRenderMessages();
+export default showLoader;
 setInterval(fetchAndRenderMessages, 60000);

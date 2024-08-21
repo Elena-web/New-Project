@@ -378,9 +378,10 @@ label {
 
 .registration-form .placeholder {
   font-size: 1.8rem;
-  position: absolute;
-  top: 1.6rem;
-  left: 1.6rem;
+ /* position: fixed;
+  top: 70%;
+  left: 12px;
+  transform: translateY(-50%);*/
   pointer-events: none;
   color: #B1B1B1;
   margin-bottom: .3rem;
@@ -449,4 +450,6 @@ label {
     opacity: 1;
   }
 }
+
+
 

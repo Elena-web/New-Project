@@ -1,4 +1,4 @@
-export default function highlightHashtags(text) {
+function highlightHashtags(text) {
   const words = text.split(' ');
   const result = [];
 
@@ -15,3 +15,4 @@ export default function highlightHashtags(text) {
 
   return result.join(' ');
 }
+export default highlightHashtags;
