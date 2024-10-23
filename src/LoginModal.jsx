@@ -20,7 +20,7 @@ function LoginModal({ isVisible, onClose }) {
       const formData = new FormData(form);
       const dataObject = Object.fromEntries(formData);
       console.log('Данные формы:', dataObject);
-      alert('Регистрация прошла успешно!');
+      alert('Вход выполнен успешно!');
       onClose();
     }
   };
