@@ -7,14 +7,12 @@ function Posts() {
   const [messages, setMessages] = useState([]);
   const [pictures, setPictures] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const urlMessages = 'https://burtovoy.github.io/messages.json';
-  const urlPictures = 'https://burtovoy.github.io/pictures.json';
 
   useEffect(() => {
     const totalDataToLoad = 2;
     let dataLoaded = 0;
     Promise.all([
-      fetch(urlMessages)
+      fetch('https://burtovoy.github.io/messages.json')
         .then((response) => response.json())
         .then((messagesData) => {
           const formattedMessages = messagesData.messages.map((message) => {
@@ -38,13 +36,17 @@ function Posts() {
           });
           setMessages(formattedMessages);
           dataLoaded += 1;
-          showLoader(dataLoaded !== totalDataToLoad);
+          if (dataLoaded !== totalDataToLoad) {
+            showLoader(true);
+          }
         }),
-      fetch(urlPictures).then((response) => response.json())
+      fetch('https://burtovoy.github.io/pictures.json').then((response) => response.json())
         .then((picturesData) => {
           setPictures(picturesData.pictures);
           dataLoaded += 1;
-          showLoader(dataLoaded !== totalDataToLoad);
+          if (dataLoaded !== totalDataToLoad) {
+            showLoader(true);
+          }
         }),
     ])
       .then(() => {
@@ -53,8 +55,8 @@ function Posts() {
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
-        setIsLoading(false);
-        showLoader(false);
+        setIsLoading(true);
+        showLoader(true);
       });
   }, []);
   return (

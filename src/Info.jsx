@@ -7,10 +7,8 @@ function Info() {
     writToday: 0,
   });
 
-  const urlStatistic = 'https://burtovoy.github.io/statistic.json';
-
   useEffect(() => {
-    fetch(urlStatistic)
+    fetch('https://burtovoy.github.io/statistic.json')
       .then((response) => response.json())
       .then((data) => {
         setStatisticData(data.statistic);
