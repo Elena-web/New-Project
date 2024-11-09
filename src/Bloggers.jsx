@@ -6,7 +6,7 @@ function Bloggers() {
         <div className="bloggers__item">
           <div className="item-name">
             <div className="avatar">
-              <img src="/public/image/user/user-5.png" alt="user" />
+              <img src="/image/user/user-5.png" alt="user" />
             </div>
             <div className="bloggers__name">
               <p className="name">Хабр Научпоп</p>
@@ -18,7 +18,7 @@ function Bloggers() {
         <div className="bloggers__item">
           <div className="item-name">
             <div className="avatar">
-              <img src="/public/image/user/user-6.jpg" alt="user" />
+              <img src="/image/user/user-6.jpg" alt="user" />
             </div>
             <div className="bloggers__name">
               <p className="name">Матч ТВ</p>
@@ -30,7 +30,7 @@ function Bloggers() {
         <div className="bloggers__item">
           <div className="item-name">
             <div className="avatar">
-              <img src="/public/image/user/user-7.png" alt="user" />
+              <img src="/image/user/user-7.png" alt="user" />
             </div>
             <div className="bloggers__name">
               <p className="name">Популярная меха...</p>

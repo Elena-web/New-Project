@@ -41,7 +41,7 @@ function RegistrationModal({ isVisible, onClose }) {
         <div className="modal__top">
           <h2 className="modal-title">Регистрация</h2>
           <button className="modal-close" type="button" onClick={handleClose}>
-            <img src="/public/image/icons/close.svg" alt="close" />
+            <img src="/image/icons/close.svg" alt="close" />
           </button>
         </div>
         <form className="registration-form" id="registration-form" onSubmit={handleRegistrationSubmit}>
