@@ -18,6 +18,18 @@ const client = new Client({
   },
 });
 
+// Получение постов
+app.get('/posts.json', async (req, res) => {
+  try {
+    // Запрос к базе данных
+    const result = await client.query('SELECT * FROM posts');
+    res.json(result.rows);
+  } catch (err) {
+    console.error('Ошибка запроса к базе данных', err);
+    res.status(500).send('Ошибка сервера');
+  }
+});
+
 client.connect()
   .then(() => console.log('Connected to database'))
   .catch((err) => console.error('Connection error', err.stack));
