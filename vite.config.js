@@ -7,4 +7,10 @@ export default defineConfig({
     emptyOutDir: false,
   },
   plugins: [react()],
+
+  server: {
+    proxy: {
+      '/posts.json': 'http://localhost:3000',
+    },
+  },
 });
