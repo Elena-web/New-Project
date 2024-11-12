@@ -7,4 +7,5 @@ export default defineConfig({
     emptyOutDir: false,
   },
   plugins: [react()],
+
 });
